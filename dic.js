@@ -2,9 +2,58 @@ const gg = document.querySelector("#lp")
 const gy = document.querySelector("#bit")
 const tt = document.querySelector("#h")
 const rtt = document.querySelector("body")
+const se = document.querySelector(".opi");
+const san = document.querySelector(".oui");
+const hand = document.querySelector(".oii");
+const dis  = document.querySelector(".oti");
+const mono  = document.querySelector(".oio");
+const vr = document.querySelector(".lsi");
+const no = document.querySelector(".nope");
+no.addEventListener("click",()=>{
+    if(vr.value == "San-serif"){
+    rtt.style.fontFamily ="Sono"
+    console.log(vr.value);
+    }
+    else if(vr.value == "Display"){
+        rtt.style.fontFamily ="Averia Serif Libre"
+        console.log(vr.value);
+    }
+    else if(vr.value=="Serif"){
+        rtt.style.fontFamily ="Crimson Text"
+    }
+    else if(vr.value=="Handwriting"){
+        rtt.style.fontFamily ="Merienda"
+    }
+    else if(vr.value =="Monospace"){
+        rtt.style.fontFamily ="Inconsolata"
+    }
+})
 gy.addEventListener("click",async ()=>{
+    if(document.querySelector(".start")!=null){
+    document.querySelector(".start").remove()
+    
+    }
    const yl = gg.value
    const quer = await axios.get("https://api.dictionaryapi.dev/api/v2/entries/en/"+yl)
+    .catch(function(err){
+        if(err.response){
+            console.clear()
+            if(document.querySelector(".meani")!=null){
+                document.querySelector(".meani").remove()
+                document.querySelector("#h").remove()
+                document.querySelector("#hh").remove()
+            }
+            if(document.querySelector(".star")==null){
+            const v = document.createElement("div")
+            v.setAttribute("class","start")
+            const gop= document.createElement("h1")
+
+            gop.innerText = "Sorry,Please search the word on the web:("
+            v.append(gop)
+            rtt.append(v)
+            }
+        }
+})
    console.log(quer.data)
    const g= quer.data[0]
    const fr = g.phonetics
@@ -52,9 +101,8 @@ gy.addEventListener("click",async ()=>{
      const rop = document.createElement("div")
      rop.setAttribute("class","oiu")
      rr.append(rop)
-     const fr  = document.createElement("hr")
-     fr.setAttribute("id","ty")
-     rop.append(fr)
+     
+    
      const yup = document.createElement("div")
      yup.setAttribute("class","mean")
      typ.append(yup)
@@ -130,9 +178,8 @@ gy.addEventListener("click",async ()=>{
      const rop = document.createElement("div")
      rop.setAttribute("class","oiu")
      rr.append(rop)
-     const fr  = document.createElement("hr")
-     fr.setAttribute("id","ty")
-     rop.append(fr)
+    
+     
      const yup = document.createElement("div")
      yup.setAttribute("class","mean")
      typ.append(yup)
