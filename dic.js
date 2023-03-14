@@ -101,8 +101,6 @@ gy.addEventListener("click",async ()=>{
      const rop = document.createElement("div")
      rop.setAttribute("class","oiu")
      rr.append(rop)
-     
-    
      const yup = document.createElement("div")
      yup.setAttribute("class","mean")
      typ.append(yup)
@@ -179,6 +177,7 @@ gy.addEventListener("click",async ()=>{
      rop.setAttribute("class","oiu")
      rr.append(rop)
     
+     
      
      const yup = document.createElement("div")
      yup.setAttribute("class","mean")
